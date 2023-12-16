@@ -1,0 +1,208 @@
+<html>
+	<head>
+		<!-- titre de la fenêtre -->
+		<title>Formulaire Environnement</title>
+		<!-- précise l'encodage au navigateur (gestion des accents, ...) -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- Feuille de style -->
+		<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+		<!-- Inibe la grande largeur sur mobile : évite que le mobile présente un écran large et qu'il faille zoomer -->
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0" />
+		<!-- icône de la page -->
+		<link rel="icon" href="../images/logo1.png" /> 
+        <style>
+            .circle {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                display: inline-block;
+                
+            }
+    
+            .green {
+                background-color: green;
+            }
+    
+            .orange {
+                background-color: orange;
+            }
+    
+            .red {
+                background-color: red;
+            }
+            .rectangletitre {
+            width: 330px;
+            height: 13px;
+            background-color: #D7FFF6;
+            border: 1px dotted gray;
+            padding: 20px; /* Espace intérieur pour le contenu */
+            clear: both;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-left: 13px;
+            font-family: OpenSans;
+        }
+        .rectangle {
+            width: 350px;
+            height: 100px;
+            background-color: #579689;
+            border: 4px solid rgb(230, 223, 223);
+            border-radius: 20px;
+            padding: 20px; /* Espace intérieur pour le contenu */
+            clear: both;
+            font-family: OpenSans;
+        }
+        @font-face
+        {
+            font-family: "OpenSans"; 
+            src: url("../fonts/OpenSans.ttf") format("truetype");
+        }
+        .button-container {
+            text-align: center; /* Centre le bouton horizontalement */
+            margin-top: 20px; /* Espacement du haut du bouton */
+        }
+        button {
+            border: none;
+            background-color:#fff ;
+            color: #fff;
+            border-radius: 20px;
+            padding: 10px 20px; /* Espacement interne du bouton (10px en haut/bas, 20px à gauche/droite) */
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e9b1dc;
+        }
+        
+        </style>
+    </head>
+    <body style="background-color: #579689;">
+        <form method ="post" action="enregistre_Formulaire_Environnement.php">
+            <div style="display: flex;justify-content: center;align-items: center;clear: both;margin-bottom: 5px;"> <img src="../images/logoEnvi.png"></div>
+            
+            <div style="float: left;margin-right: 10px;margin-bottom: 13px">
+                <div class="rectangletitre">
+                    <div class="circle red " style="float: left;" id="circle1"> </div>
+                    <div style="margin-left: 20px;">Recyclage matériaux</div> <br />
+                </div>
+                <div class="rectangle">
+                    <input type="checkbox" id="checkbox1" onchange="updateCircleColor('circle1')"> Produits chimiques de polycarbonate <br />
+                    <input type="checkbox" id="checkbox2" onchange="updateCircleColor('circle1')"> Produits chimiques de polissage <br />
+                    <input type="checkbox" id="checkbox3" onchange="updateCircleColor('circle1')"> Solvants <br />
+                    <input type="checkbox" id="checkbox4" onchange="updateCircleColor('circle1')"> Produits chimiques de revêtement <br />
+                    <input type="checkbox" id="checkbox5" onchange="updateCircleColor('circle1')"> Réactifs de nettoyage <br />
+                </div>
+            </div>
+
+
+
+
+            <div style="float: left;margin-right: 10px;">
+                <div class="rectangletitre">
+                    <div class="circle red " style="float: left;" id="circle2"> </div>
+                    <div style="margin-left: 20px;">Pollution environnante</div> <br />
+                </div>
+                <div class="rectangle">
+                    <input type="checkbox" id="checkbox12" onchange="updateCircleColor('circle2')"> Produits chimiques de polycarbonate <br />
+                    <input type="checkbox" id="checkbox22" onchange="updateCircleColor('circle2')"> Produits chimiques de polissage <br />
+                    <input type="checkbox" id="checkbox32" onchange="updateCircleColor('circle2')"> Solvants <br />
+                    <input type="checkbox" id="checkbox42" onchange="updateCircleColor('circle2')"> Produits chimiques de revêtement <br />
+                    <input type="checkbox" id="checkbox52" onchange="updateCircleColor('circle2')"> Réactifs de nettoyage <br />
+                </div>
+            </div>
+
+
+
+
+            <div style="float: left;margin-right: 10px; ">
+                <div class="rectangletitre">
+                    <div class="circle red " style="float: left;" id="circle3"> </div>
+                    <div style="margin-left: 20px;">Trie dans les bureaux</div> <br />
+                </div>
+                <div class="rectangle">
+                    <input type="checkbox" id="checkbox13" onchange="updateCircleColor('circle3')"> Produits chimiques de polycarbonate <br />
+                    <input type="checkbox" id="checkbox23" onchange="updateCircleColor('circle3')"> Produits chimiques de polissage <br />
+                    <input type="checkbox" id="checkbox33" onchange="updateCircleColor('circle3')"> Solvants <br />
+                    <input type="checkbox" id="checkbox43" onchange="updateCircleColor('circle3')"> Produits chimiques de revêtement <br />
+                    <input type="checkbox" id="checkbox53" onchange="updateCircleColor('circle3')"> Réactifs de nettoyage <br />
+                </div>
+            </div>
+
+
+
+            <div style="float: left;margin-right: 10px;clear: both;">
+                <div class="rectangletitre">
+                    <div class="circle red " style="float: left;" id="circle4"> </div>
+                    <div style="margin-left: 20px;">Recyclage produits chimiques</div> <br />
+                </div>
+                <div class="rectangle">
+                    <input type="checkbox" id="checkbox14" onchange="updateCircleColor('circle4')"> Produits chimiques de polycarbonate <br />
+                    <input type="checkbox" id="checkbox24" onchange="updateCircleColor('circle4')"> Produits chimiques de polissage <br />
+                    <input type="checkbox" id="checkbox34" onchange="updateCircleColor('circle4')"> Solvants <br />
+                    <input type="checkbox" id="checkbox44" onchange="updateCircleColor('circle4')"> Produits chimiques de revêtement <br />
+                    <input type="checkbox" id="checkbox54" onchange="updateCircleColor('circle4')"> Réactifs de nettoyage <br />
+                </div>
+            </div>
+
+
+
+
+            <div style="float: left;margin-right: 10px;">
+                <div class="rectangletitre">
+                    <div class="circle red " style="float: left;" id="circle5"> </div>
+                    <div style="margin-left: 20px;">Sources d'énergie renouvelable</div> <br />
+                </div>
+                <div class="rectangle">
+                    <input type="checkbox" id="checkbox15" onchange="updateCircleColor('circle5')"> Produits chimiques de polycarbonate <br />
+                    <input type="checkbox" id="checkbox25" onchange="updateCircleColor('circle5')"> Produits chimiques de polissage <br />
+                    <input type="checkbox" id="checkbox35" onchange="updateCircleColor('circle5')"> Solvants <br />
+                    <input type="checkbox" id="checkbox45" onchange="updateCircleColor('circle5')"> Produits chimiques de revêtement <br />
+                    <input type="checkbox" id="checkbox55" onchange="updateCircleColor('circle5')"> Réactifs de nettoyage <br />
+                </div>
+            </div>
+
+
+
+
+
+            <div style="float: left;margin-right: 10px;">
+                <div class="rectangletitre">
+                    <div class="circle red " style="float: left;" id="circle6"> </div>
+                    <div style="margin-left: 20px;">Consommation d'eau</div> <br />
+                </div>
+                <div class="rectangle">
+                    <input type="checkbox" id="checkbox16" onchange="updateCircleColor('circle6')"> Produits chimiques de polycarbonate <br />
+                    <input type="checkbox" id="checkbox26" onchange="updateCircleColor('circle6')"> Produits chimiques de polissage <br />
+                    <input type="checkbox" id="checkbox36" onchange="updateCircleColor('circle6')"> Solvants <br />
+                    <input type="checkbox" id="checkbox46" onchange="updateCircleColor('circle6')"> Produits chimiques de revêtement <br />
+                    <input type="checkbox" id="checkbox56" onchange="updateCircleColor('circle6')"> Réactifs de nettoyage <br />
+                </div>
+            </div>                
+        <div class="button-container" style="margin-top: 6px;">
+            <input type="submit" value="Enregistrer"/>
+        </div>
+        </form>
+    
+        <script>
+            function updateCircleColor(circleId) {
+    var circle = document.getElementById(circleId);
+    var division = circle.parentElement.parentElement; // Trouver la division parente du cercle
+    var checkboxes = division.querySelectorAll('input[type="checkbox"]:checked');
+    var checkedCount = checkboxes.length;
+
+    // Changer la classe CSS du cercle en fonction du nombre de cases cochées dans sa division
+    if (checkedCount === 0 ||  checkedCount === 1) {
+        circle.className = "circle red ";
+    } else if (checkedCount === 5) {
+        circle.className = "circle green";
+    } else {
+        circle.className = "circle orange";
+    }
+}
+
+        </script>
+    </body>
+</html>
+    
